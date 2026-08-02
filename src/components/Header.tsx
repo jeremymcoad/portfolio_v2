@@ -42,12 +42,12 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-black/70 backdrop-blur-md border-b border-white/10' : 'bg-transparent border-b border-transparent'
+      className={`fixed inset-x-0 top-0 z-50 [transform:translateZ(0)] transition-colors duration-300 ${
+        scrolled ? 'bg-[#05060a] border-b border-white/10' : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="group">
+        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="group pl-2 sm:pl-4">
           <div className="text-lg font-black tracking-wide text-white sm:text-xl">{site.name.toUpperCase()}</div>
           <div className="block whitespace-nowrap text-[10px] font-semibold tracking-tight md:hidden lg:block lg:text-xs lg:tracking-[0.15em]">
             {site.roles.map((r, i) => (
