@@ -30,7 +30,7 @@ export function Hero() {
   }, [tapped]);
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-28 pb-16 sm:pt-32">
+    <section id="hero" className="relative overflow-hidden pt-8 pb-16 sm:pt-12">
       <div
         className="pointer-events-none absolute left-1/2 top-40 -z-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full opacity-30 blur-[120px]"
         style={{ background: 'radial-gradient(circle, #7c3aed 0%, transparent 70%)' }}
