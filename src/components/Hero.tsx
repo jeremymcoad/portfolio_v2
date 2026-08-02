@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { brainCategories, site } from '../data/content';
 import { BrainGraphic } from './BrainGraphic';
 import { CategoryRow } from './CategoryRow';
@@ -8,10 +8,26 @@ import { SummaryCards } from './SummaryCards';
 export function Hero() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [tapped, setTapped] = useState<string | null>(null);
+  const infoBoxRef = useRef<HTMLDivElement>(null);
 
   const leftCats = brainCategories.filter((c) => c.side === 'left');
   const rightCats = brainCategories.filter((c) => c.side === 'right');
   const tappedCat = brainCategories.find((c) => c.id === tapped);
+
+  useEffect(() => {
+    if (!tapped) return;
+    // Listens for "click" (not pointerdown/mousedown) so it fires in the same event
+    // type a dot button's onClick uses — that handler calls stopPropagation when
+    // switching to a different dot, which reliably suppresses this listener only
+    // when both are the same event type, avoiding a close-then-reopen flash.
+    const onClick = (e: MouseEvent) => {
+      if (!infoBoxRef.current?.contains(e.target as Node)) {
+        setTapped(null);
+      }
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, [tapped]);
 
   return (
     <section id="hero" className="relative overflow-hidden pt-28 pb-16 sm:pt-32">
@@ -98,35 +114,41 @@ export function Hero() {
 
         <div className="relative mx-auto mt-8 w-full">
           <BrainGraphic activeId={tapped} onSelect={(id) => setTapped((cur) => (cur === id ? null : id))} interactive={false} />
+
+          {/* Overlays the brain instead of pushing content below it, so exploring a
+              category never requires scrolling. Dismissed by the document click
+              listener above when tapping anywhere outside this box. */}
+          <div
+            ref={infoBoxRef}
+            className={`absolute inset-x-3 bottom-3 z-20 rounded-xl border p-4 text-left shadow-xl backdrop-blur-md transition-all duration-300 ${
+              tappedCat
+                ? 'translate-y-0 border-white/15 bg-[#05060a]/90 opacity-100'
+                : 'pointer-events-none translate-y-2 border-transparent bg-[#05060a]/0 opacity-0'
+            }`}
+          >
+            {tappedCat && (
+              <>
+                <div className="flex items-center gap-2">
+                  <div
+                    className="flex h-8 w-8 items-center justify-center rounded-md border"
+                    style={{ color: tappedCat.color, borderColor: `${tappedCat.color}55`, background: `${tappedCat.color}14` }}
+                  >
+                    <Icon name={tappedCat.icon} className="h-4 w-4" />
+                  </div>
+                  <div className="text-sm font-bold tracking-wide" style={{ color: tappedCat.color }}>
+                    {tappedCat.title.toUpperCase()}
+                  </div>
+                </div>
+                <p className="mt-2 text-xs leading-relaxed text-gray-300">{tappedCat.detail}</p>
+              </>
+            )}
+          </div>
         </div>
 
         <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] font-semibold tracking-wide text-gray-500">
           <Icon name="arrowRight" className="h-3 w-3 rotate-[-45deg]" />
           TAP A DOT TO EXPLORE
         </p>
-
-        <div
-          className={`mt-5 overflow-hidden rounded-xl border text-left transition-all duration-300 ${
-            tappedCat ? 'max-h-40 border-white/15 bg-white/[0.04] p-4 opacity-100' : 'max-h-0 border-transparent p-0 opacity-0'
-          }`}
-        >
-          {tappedCat && (
-            <>
-              <div className="flex items-center gap-2">
-                <div
-                  className="flex h-8 w-8 items-center justify-center rounded-md border"
-                  style={{ color: tappedCat.color, borderColor: `${tappedCat.color}55`, background: `${tappedCat.color}14` }}
-                >
-                  <Icon name={tappedCat.icon} className="h-4 w-4" />
-                </div>
-                <div className="text-sm font-bold tracking-wide" style={{ color: tappedCat.color }}>
-                  {tappedCat.title.toUpperCase()}
-                </div>
-              </div>
-              <p className="mt-2 text-xs leading-relaxed text-gray-300">{tappedCat.detail}</p>
-            </>
-          )}
-        </div>
       </div>
 
       <div className="mt-14 sm:mt-16">

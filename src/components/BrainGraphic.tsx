@@ -62,9 +62,14 @@ export function BrainGraphic({
             aria-label={cat.title}
             onMouseEnter={() => interactive && onHover?.(cat.id)}
             onMouseLeave={() => interactive && onHover?.(null)}
-            onClick={() => onSelect?.(cat.id)}
-            className="absolute flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
-            style={{ left: `${cat.pos.x}%`, top: `${cat.pos.y}%`, width: '5%', aspectRatio: '1 / 1' }}
+            onClick={(e) => {
+              // Stops mobile's "tap outside to close" handler on an ancestor from
+              // immediately closing the panel this same tap just opened/switched to.
+              e.stopPropagation();
+              onSelect?.(cat.id);
+            }}
+            className="absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+            style={{ left: `${cat.pos.x}%`, top: `${cat.pos.y}%`, width: '8%', aspectRatio: '1 / 1' }}
           >
             {isActive && (
               <span
@@ -75,10 +80,10 @@ export function BrainGraphic({
             <span
               className={`block rounded-full bg-white transition-all ${isActive ? '' : 'animate-pulse-dot'}`}
               style={{
-                width: isActive ? '55%' : '40%',
+                width: isActive ? '80%' : '62%',
                 aspectRatio: '1 / 1',
-                border: `2px solid ${cat.color}`,
-                boxShadow: `0 0 8px ${cat.color}, 0 0 3px ${cat.color}`,
+                border: `2.5px solid ${cat.color}`,
+                boxShadow: `0 0 10px ${cat.color}, 0 0 4px ${cat.color}`,
               }}
             />
           </button>
