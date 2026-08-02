@@ -39,7 +39,7 @@ export function Contact() {
         </div>
 
         <a
-          href={site.contact.resume}
+          href={`${import.meta.env.BASE_URL}${site.contact.resume}`}
           target="_blank"
           rel="noreferrer"
           className="mt-6 inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 transition-colors hover:text-white"

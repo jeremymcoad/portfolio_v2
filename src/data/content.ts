@@ -277,6 +277,6 @@ export const site = {
     email: 'jeremymatthewcoad@gmail.com',
     github: 'https://github.com/jeremymcoad',
     linkedin: 'https://www.linkedin.com/in/jeremymcoad/',
-    resume: '/Jeremy-Coad-Healthcare-Technology-Product-Owner_web.pdf',
+    resume: 'Jeremy-Coad-Healthcare-Technology-Product-Owner_web.pdf',
   },
 } as const;

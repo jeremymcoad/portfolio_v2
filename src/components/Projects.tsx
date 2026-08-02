@@ -16,7 +16,7 @@ export function Projects() {
               className="grid gap-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:grid-cols-2"
             >
               <div className={`relative aspect-[4/3] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <img src={`/${p.image}`} alt={p.title} className="h-full w-full object-cover" />
+                <img src={`${import.meta.env.BASE_URL}${p.image}`} alt={p.title} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
 
