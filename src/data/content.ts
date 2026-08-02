@@ -29,7 +29,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       '10+ years leading product strategy and delivery for healthcare technology platforms, turning complex clinical and operational needs into scalable digital products.',
     color: '#3b82f6',
-    pos: { x: 42, y: 15 },
+    pos: { x: 32, y: 12 },
   },
   {
     id: 'projects',
@@ -40,7 +40,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       'From patient portals to CRM platforms, I scope, prioritize, and ship features that move the needle for real users and real businesses.',
     color: '#22d3ee',
-    pos: { x: 35, y: 33 },
+    pos: { x: 22, y: 32 },
   },
   {
     id: 'tinkering',
@@ -51,7 +51,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       "I'm naturally curious about how things work — whether it's software, a guitar amp, or a piece of furniture, I like taking things apart just to understand them.",
     color: '#2dd4bf',
-    pos: { x: 30, y: 48 },
+    pos: { x: 18, y: 48 },
   },
   {
     id: 'learning',
@@ -62,7 +62,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       'Continuously exploring new frameworks, product methodologies, and technologies to sharpen how I build, lead, and make decisions.',
     color: '#a3e635',
-    pos: { x: 33, y: 62 },
+    pos: { x: 22, y: 63 },
   },
   {
     id: 'analysis',
@@ -73,7 +73,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       'Translating data into decisions — from patient engagement metrics to roadmap prioritization and measurable product outcomes.',
     color: '#818cf8',
-    pos: { x: 42, y: 78 },
+    pos: { x: 32, y: 80 },
   },
   {
     id: 'health',
@@ -83,7 +83,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Stronger every day. Body fuels mind.',
     detail: 'Staying active keeps my head clear and my energy up for everything else on this list.',
     color: '#4ade80',
-    pos: { x: 60, y: 15 },
+    pos: { x: 62, y: 12 },
   },
   {
     id: 'outdoors',
@@ -93,7 +93,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Nature recharges and inspires.',
     detail: 'Hiking, canoeing, and fresh air keep me grounded and curious, rain or shine.',
     color: '#eab308',
-    pos: { x: 68, y: 33 },
+    pos: { x: 68, y: 28 },
   },
   {
     id: 'music',
@@ -103,7 +103,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Strings, rhythm & soul.',
     detail: 'Guitar gives me a space to think and reset — a creative outlet outside of screens and sprints.',
     color: '#fb923c',
-    pos: { x: 72, y: 48 },
+    pos: { x: 73, y: 45 },
   },
   {
     id: 'games',
@@ -113,7 +113,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Strategy, fun, and friendly competition.',
     detail: 'I love a good strategy game — the mix of planning and unpredictability never gets old.',
     color: '#f472b6',
-    pos: { x: 68, y: 62 },
+    pos: { x: 70, y: 60 },
   },
   {
     id: 'family',
@@ -123,7 +123,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'My why. My everything.',
     detail: 'Family is the reason behind everything I build and work toward.',
     color: '#c084fc',
-    pos: { x: 59, y: 78 },
+    pos: { x: 62, y: 80 },
   },
 ];
 

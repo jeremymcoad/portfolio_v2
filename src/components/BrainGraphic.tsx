@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { brainCategories, type BrainCategory } from '../data/content';
 
-const IMAGE_RATIO = 1402 / 1122;
+const IMAGE_RATIO = 800 / 900;
 
 export function BrainGraphic({
   activeId,
@@ -103,7 +103,7 @@ export function BrainGraphic({
   }
 
   return (
-    <div className="relative w-full" style={{ aspectRatio: '1402 / 1122' }}>
+    <div className="relative w-full" style={{ aspectRatio: `${IMAGE_RATIO}` }}>
       {content}
     </div>
   );
