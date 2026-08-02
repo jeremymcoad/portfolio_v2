@@ -217,6 +217,18 @@ export const site = {
   ],
   projects: [
     {
+      title: 'Morning Blend Games',
+      period: 'June 2026',
+      summary:
+        'Word-puzzle fans wanted a fresh daily challenge without the errors and inconsistency that come from hand-curating puzzles one at a time, and a solo-maintained game needed a content pipeline that could catch bad puzzles before players ever saw them.',
+      solution:
+        'Built morningblendgames.com, an installable PWA offering a family of daily word puzzles. A rules engine runs on a schedule to generate a batch of puzzles, validates them, and opens a pull request for human review — publishing only after that build is approved.',
+      impact:
+        'Delivered a reliable daily-puzzle habit loop with zero manual puzzle-writing, while the PR-based approval gate catches issues before release, giving the game a production-grade content pipeline without a content team.',
+      image: 'morningblendgames.jpg',
+      tech: ['Next.js', 'PWA', 'TypeScript', 'Rules Engine', 'GitHub Actions'],
+    },
+    {
       title: 'Streamlined Patient Scheduling Modal',
       period: '2026',
       summary:
