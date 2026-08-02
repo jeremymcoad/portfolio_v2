@@ -4,7 +4,7 @@ import { Icon } from './Icon';
 export function Experience() {
   return (
     <section id="experience" className="relative border-t border-white/5 py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-14 text-center">
           <div className="text-xs font-bold tracking-[0.3em] text-purple-400">CAREER</div>
           <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">Work Experience</h2>

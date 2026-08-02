@@ -14,7 +14,7 @@ export function Contact() {
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[120px]"
         style={{ background: 'radial-gradient(circle, #ec4899 0%, transparent 70%)' }}
       />
-      <div className="mx-auto max-w-2xl px-5 text-center sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
         <div className="text-xs font-bold tracking-[0.3em] text-pink-400">GET IN TOUCH</div>
         <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">Let's build something great.</h2>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-gray-400">
