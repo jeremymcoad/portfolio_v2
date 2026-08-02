@@ -49,10 +49,17 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="group">
           <div className="text-lg font-black tracking-wide text-white sm:text-xl">{site.name.toUpperCase()}</div>
-          <div className="text-[10px] font-semibold tracking-[0.25em] text-cyan-400 sm:text-xs">{site.role.toUpperCase()}</div>
+          <div className="block whitespace-nowrap text-[9px] font-semibold tracking-tight md:hidden lg:block lg:text-xs lg:tracking-[0.15em]">
+            {site.roles.map((r, i) => (
+              <span key={r.label}>
+                <span style={{ color: r.color }}>{r.label.toUpperCase()}</span>
+                {i < site.roles.length - 1 && <span className="text-gray-500">, </span>}
+              </span>
+            ))}
+          </div>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
           {nav.map((item) => (
             <a
               key={item.href}

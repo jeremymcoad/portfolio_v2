@@ -130,6 +130,13 @@ export const brainCategories: BrainCategory[] = [
 export const site = {
   name: 'Jeremy Coad',
   role: 'Product Owner',
+  // Header subtitle — colors reused from the brain category palette above.
+  roles: [
+    { label: 'Dad', color: '#f472b6' },
+    { label: 'Tinkerer', color: '#2dd4bf' },
+    { label: 'Nature Nut', color: '#4ade80' },
+    { label: 'Product Owner', color: '#3b82f6' },
+  ],
   meta: {
     title: 'Jeremy Coad | Product Owner',
     description:
