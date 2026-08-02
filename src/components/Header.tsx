@@ -5,14 +5,6 @@ import { Icon } from './Icon';
 export function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>('#hero');
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const sections = nav
@@ -41,11 +33,7 @@ export function Header() {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-[#05060a] border-b border-white/10' : 'bg-transparent border-b border-transparent'
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05060a] [will-change:transform]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="group pl-2 sm:pl-4">
           <div className="text-lg font-black tracking-wide text-white sm:text-xl">{site.name.toUpperCase()}</div>
