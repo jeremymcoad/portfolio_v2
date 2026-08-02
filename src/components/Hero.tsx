@@ -22,34 +22,36 @@ export function Hero() {
 
       {/* Desktop / large tablet layout */}
       <div className="mx-auto hidden max-w-[1600px] px-8 lg:block">
-        <div className="grid grid-cols-[300px_1fr] items-center gap-10 xl:grid-cols-[340px_1fr]">
-          <div>
-            <h1 className="text-5xl font-black leading-[1.05] tracking-tight text-white xl:text-6xl">
-              {site.hero.eyebrow}
-              <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                {site.hero.highlight}
-              </span>
-            </h1>
-            <div className="mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">{site.hero.tagline}</p>
-            <a
-              href="#experience"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="mt-7 inline-block rounded-lg border border-cyan-400/50 px-5 py-2.5 text-xs font-bold tracking-widest text-cyan-300 transition-colors hover:bg-cyan-400/10"
-            >
-              EXPLORE MY WORLD
-            </a>
-          </div>
+        {/* max-w matches SummaryCards' rendered content width (max-w-6xl minus its px-8 padding),
+            so the whole About Me section — heading included — lines up with the cards below.
+            The centering wrapper is a plain block, not a grid/flex container itself — mx-auto
+            directly on a grid/flex container here breaks percentage-width resolution for the
+            brain's children. */}
+        <div className="mx-auto w-[min(100%,1088px)]">
+          <div className="grid grid-cols-[300px_1fr] items-center gap-10 xl:grid-cols-[340px_1fr]">
+            <div>
+              <h1 className="text-5xl font-black leading-[1.05] tracking-tight text-white xl:text-6xl">
+                {site.hero.eyebrow}
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  {site.hero.highlight}
+                </span>
+              </h1>
+              <div className="mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
+              <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">{site.hero.tagline}</p>
+              <a
+                href="#experience"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="mt-7 inline-block rounded-lg border border-cyan-400/50 px-5 py-2.5 text-xs font-bold tracking-widest text-cyan-300 transition-colors hover:bg-cyan-400/10"
+              >
+                EXPLORE MY WORLD
+              </a>
+            </div>
 
-          {/* max-w matches SummaryCards' rendered content width (max-w-6xl minus its px-8 padding).
-              The centering wrapper is a plain block, not the grid itself — mx-auto directly on a
-              grid container here breaks percentage-width resolution for the brain's children. */}
-          <div className="mx-auto w-[min(100%,1088px)]">
-            <div className="grid grid-cols-[minmax(180px,240px)_1fr_minmax(180px,240px)] items-stretch gap-3 xl:gap-6">
+            <div className="grid grid-cols-[minmax(140px,200px)_1fr_minmax(140px,200px)] items-stretch gap-3 xl:gap-5">
               <div className="flex flex-col justify-center">
                 <div className="mb-4 text-right">
                   <div className="text-sm font-black tracking-widest text-blue-400">LEFT BRAIN</div>
@@ -79,9 +81,9 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </div>
 
-        <p className="mt-8 text-center text-xs tracking-wide text-gray-500">HOVER OR CLICK THE DOTS TO EXPLORE</p>
+          <p className="mt-8 text-center text-xs tracking-wide text-gray-500">HOVER OR CLICK THE DOTS TO EXPLORE</p>
+        </div>
       </div>
 
       {/* Mobile / small tablet layout */}
