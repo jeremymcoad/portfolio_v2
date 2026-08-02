@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { brainCategories, site } from '../data/content';
-import { BrainSvg } from './BrainSvg';
+import { BrainGraphic } from './BrainGraphic';
 import { CategoryRow } from './CategoryRow';
 import { Icon } from './Icon';
 import { SummaryCards } from './SummaryCards';
@@ -58,8 +58,8 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mx-auto aspect-square w-full max-w-[360px]">
-              <BrainSvg activeId={hovered} onHover={setHovered} />
+            <div className="mx-auto w-full max-w-[420px]">
+              <BrainGraphic activeId={hovered} onHover={setHovered} />
             </div>
 
             <div>
@@ -89,17 +89,8 @@ export function Hero() {
         </h1>
         <p className="mx-auto mt-4 max-w-xs text-sm text-gray-400">{site.hero.tagline}</p>
 
-        <div className="relative mx-auto mt-8 aspect-square w-full max-w-[320px]">
-          <BrainSvg activeId={tapped} onSelect={(id) => setTapped((cur) => (cur === id ? null : id))} interactive={false} />
-          {brainCategories.map((c) => (
-            <button
-              key={c.id}
-              aria-label={c.title}
-              onClick={() => setTapped((cur) => (cur === c.id ? null : c.id))}
-              className="absolute h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full"
-              style={{ left: `${(c.pos.x / 256) * 100}%`, top: `${(c.pos.y / 256) * 100}%` }}
-            />
-          ))}
+        <div className="relative mx-auto mt-8 w-full max-w-[360px]">
+          <BrainGraphic activeId={tapped} onSelect={(id) => setTapped((cur) => (cur === id ? null : id))} interactive={false} />
         </div>
 
         <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] font-semibold tracking-wide text-gray-500">

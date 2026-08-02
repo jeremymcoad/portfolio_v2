@@ -18,7 +18,7 @@ export interface BrainCategory {
   pos: { x: number; y: number };
 }
 
-// Positions are in the brain SVG's 0-256 viewBox coordinate space.
+// Positions are percentages (x, y) over the brain.webp image's bounding box.
 export const brainCategories: BrainCategory[] = [
   {
     id: 'work',
@@ -28,8 +28,8 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Solving problems. Building impact.',
     detail:
       '10+ years leading product strategy and delivery for healthcare technology platforms, turning complex clinical and operational needs into scalable digital products.',
-    color: '#38bdf8',
-    pos: { x: 100, y: 62 },
+    color: '#3b82f6',
+    pos: { x: 42, y: 15 },
   },
   {
     id: 'projects',
@@ -40,7 +40,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       'From patient portals to CRM platforms, I scope, prioritize, and ship features that move the needle for real users and real businesses.',
     color: '#22d3ee',
-    pos: { x: 76, y: 95 },
+    pos: { x: 35, y: 33 },
   },
   {
     id: 'tinkering',
@@ -51,7 +51,7 @@ export const brainCategories: BrainCategory[] = [
     detail:
       "I'm naturally curious about how things work — whether it's software, a guitar amp, or a piece of furniture, I like taking things apart just to understand them.",
     color: '#2dd4bf',
-    pos: { x: 66, y: 130 },
+    pos: { x: 30, y: 48 },
   },
   {
     id: 'learning',
@@ -61,8 +61,8 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Always curious. Always growing.',
     detail:
       'Continuously exploring new frameworks, product methodologies, and technologies to sharpen how I build, lead, and make decisions.',
-    color: '#818cf8',
-    pos: { x: 78, y: 165 },
+    color: '#a3e635',
+    pos: { x: 33, y: 62 },
   },
   {
     id: 'analysis',
@@ -72,8 +72,8 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Data, insights, and strategy.',
     detail:
       'Translating data into decisions — from patient engagement metrics to roadmap prioritization and measurable product outcomes.',
-    color: '#a78bfa',
-    pos: { x: 100, y: 198 },
+    color: '#818cf8',
+    pos: { x: 42, y: 78 },
   },
   {
     id: 'health',
@@ -83,7 +83,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Stronger every day. Body fuels mind.',
     detail: 'Staying active keeps my head clear and my energy up for everything else on this list.',
     color: '#4ade80',
-    pos: { x: 156, y: 58 },
+    pos: { x: 60, y: 12 },
   },
   {
     id: 'outdoors',
@@ -93,7 +93,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Nature recharges and inspires.',
     detail: 'Hiking, canoeing, and fresh air keep me grounded and curious, rain or shine.',
     color: '#a3e635',
-    pos: { x: 180, y: 88 },
+    pos: { x: 65, y: 24 },
   },
   {
     id: 'music',
@@ -103,7 +103,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Strings, rhythm & soul.',
     detail: 'Guitar gives me a space to think and reset — a creative outlet outside of screens and sprints.',
     color: '#facc15',
-    pos: { x: 190, y: 120 },
+    pos: { x: 70, y: 36 },
   },
   {
     id: 'games',
@@ -113,7 +113,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Strategy, fun, and friendly competition.',
     detail: 'I love a good strategy game — the mix of planning and unpredictability never gets old.',
     color: '#fb923c',
-    pos: { x: 182, y: 150 },
+    pos: { x: 71, y: 48 },
   },
   {
     id: 'netflix',
@@ -123,7 +123,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Stories, laughs, and a little escape.',
     detail: 'A good series (or a rewatch of an old favorite) is my way to unwind after a long day.',
     color: '#f87171',
-    pos: { x: 168, y: 175 },
+    pos: { x: 68, y: 60 },
   },
   {
     id: 'dogs',
@@ -133,7 +133,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'Loyal companions. Unconditional love.',
     detail: 'My dogs keep me company through every long workday and every weekend adventure.',
     color: '#f472b6',
-    pos: { x: 150, y: 197 },
+    pos: { x: 63, y: 72 },
   },
   {
     id: 'family',
@@ -143,7 +143,7 @@ export const brainCategories: BrainCategory[] = [
     blurb: 'My why. My everything.',
     detail: 'Family is the reason behind everything I build and work toward.',
     color: '#c084fc',
-    pos: { x: 128, y: 216 },
+    pos: { x: 58, y: 82 },
   },
 ];
 
