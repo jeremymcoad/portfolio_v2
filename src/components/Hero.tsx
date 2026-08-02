@@ -45,32 +45,37 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="grid grid-cols-[minmax(180px,240px)_1fr_minmax(180px,240px)] items-stretch gap-3 xl:gap-6">
-            <div className="flex flex-col justify-center">
-              <div className="mb-4 text-right">
-                <div className="text-sm font-black tracking-widest text-blue-400">LEFT BRAIN</div>
-                <div className="text-[10px] font-semibold tracking-wide text-gray-500">LOGIC · ANALYTICAL · STRUCTURE</div>
+          {/* max-w matches SummaryCards' rendered content width (max-w-6xl minus its px-8 padding).
+              The centering wrapper is a plain block, not the grid itself — mx-auto directly on a
+              grid container here breaks percentage-width resolution for the brain's children. */}
+          <div className="mx-auto w-[min(100%,1088px)]">
+            <div className="grid grid-cols-[minmax(180px,240px)_1fr_minmax(180px,240px)] items-stretch gap-3 xl:gap-6">
+              <div className="flex flex-col justify-center">
+                <div className="mb-4 text-right">
+                  <div className="text-sm font-black tracking-widest text-blue-400">LEFT BRAIN</div>
+                  <div className="text-[10px] font-semibold tracking-wide text-gray-500">LOGIC · ANALYTICAL · STRUCTURE</div>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  {leftCats.map((c) => (
+                    <CategoryRow key={c.id} cat={c} active={hovered === c.id} onHover={setHovered} side="left" />
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-col gap-1.5">
-                {leftCats.map((c) => (
-                  <CategoryRow key={c.id} cat={c} active={hovered === c.id} onHover={setHovered} side="left" />
-                ))}
-              </div>
-            </div>
 
-            <div className="relative h-full w-full">
-              <BrainGraphic activeId={hovered} onHover={setHovered} fit="height" />
-            </div>
-
-            <div className="flex flex-col justify-center">
-              <div className="mb-4">
-                <div className="text-sm font-black tracking-widest text-purple-400">RIGHT BRAIN</div>
-                <div className="text-[10px] font-semibold tracking-wide text-gray-500">CREATIVE · INTUITIVE · IMAGINATION</div>
+              <div className="relative h-full w-full">
+                <BrainGraphic activeId={hovered} onHover={setHovered} fit="height" />
               </div>
-              <div className="flex flex-col gap-1.5">
-                {rightCats.map((c) => (
-                  <CategoryRow key={c.id} cat={c} active={hovered === c.id} onHover={setHovered} side="right" />
-                ))}
+
+              <div className="flex flex-col justify-center">
+                <div className="mb-4">
+                  <div className="text-sm font-black tracking-widest text-purple-400">RIGHT BRAIN</div>
+                  <div className="text-[10px] font-semibold tracking-wide text-gray-500">CREATIVE · INTUITIVE · IMAGINATION</div>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  {rightCats.map((c) => (
+                    <CategoryRow key={c.id} cat={c} active={hovered === c.id} onHover={setHovered} side="right" />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
