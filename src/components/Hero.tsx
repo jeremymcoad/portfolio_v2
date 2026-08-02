@@ -21,7 +21,7 @@ export function Hero() {
       />
 
       {/* Desktop / large tablet layout */}
-      <div className="mx-auto hidden max-w-7xl px-8 lg:block">
+      <div className="mx-auto hidden max-w-[1600px] px-8 lg:block">
         <div className="grid grid-cols-[300px_1fr] items-center gap-10 xl:grid-cols-[340px_1fr]">
           <div>
             <h1 className="text-5xl font-black leading-[1.05] tracking-tight text-white xl:text-6xl">
@@ -45,8 +45,8 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="grid grid-cols-[minmax(180px,240px)_minmax(280px,360px)_minmax(180px,240px)] items-center gap-3 xl:gap-6">
-            <div>
+          <div className="grid grid-cols-[minmax(180px,240px)_1fr_minmax(180px,240px)] items-stretch gap-3 xl:gap-6">
+            <div className="flex flex-col justify-center">
               <div className="mb-4 text-right">
                 <div className="text-sm font-black tracking-widest text-blue-400">LEFT BRAIN</div>
                 <div className="text-[10px] font-semibold tracking-wide text-gray-500">LOGIC · ANALYTICAL · STRUCTURE</div>
@@ -58,11 +58,11 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mx-auto w-full max-w-[420px]">
-              <BrainGraphic activeId={hovered} onHover={setHovered} />
+            <div className="relative h-full w-full">
+              <BrainGraphic activeId={hovered} onHover={setHovered} fit="height" />
             </div>
 
-            <div>
+            <div className="flex flex-col justify-center">
               <div className="mb-4">
                 <div className="text-sm font-black tracking-widest text-purple-400">RIGHT BRAIN</div>
                 <div className="text-[10px] font-semibold tracking-wide text-gray-500">CREATIVE · INTUITIVE · IMAGINATION</div>
@@ -89,7 +89,7 @@ export function Hero() {
         </h1>
         <p className="mx-auto mt-4 max-w-xs text-sm text-gray-400">{site.hero.tagline}</p>
 
-        <div className="relative mx-auto mt-8 w-full max-w-[360px]">
+        <div className="relative mx-auto mt-8 w-full">
           <BrainGraphic activeId={tapped} onSelect={(id) => setTapped((cur) => (cur === id ? null : id))} interactive={false} />
         </div>
 
