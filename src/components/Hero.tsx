@@ -55,16 +55,6 @@ export function Hero() {
               </h1>
               <div className="mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">{site.hero.tagline}</p>
-              <a
-                href="#experience"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="mt-7 inline-block rounded-lg border border-cyan-400/50 px-5 py-2.5 text-xs font-bold tracking-widest text-cyan-300 transition-colors hover:bg-cyan-400/10"
-              >
-                EXPLORE MY WORLD
-              </a>
             </div>
 
             <div className="grid grid-cols-[minmax(140px,200px)_1fr_minmax(140px,200px)] items-stretch gap-3 xl:gap-5">
